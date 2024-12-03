@@ -1,0 +1,1 @@
+SELECT PriceID,SUM(Price.Money * OrderItem.ProductCount) as Sumofsell FROM OrderItem JOIN Price ON Price.ID = OrderItem.PriceID GROUP BY PriceID

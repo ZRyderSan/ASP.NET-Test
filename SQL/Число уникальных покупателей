@@ -1,0 +1,1 @@
+SELECT PriceID, COUNT(DISTINCT PersonID) as UniqBuyer FROM OrderItem GROUP BY PriceID ORDER BY UniqBuyer DESC

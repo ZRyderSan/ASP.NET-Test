@@ -1,0 +1,1 @@
+SELECT ProductName,SUM(ProductCount) as sumofsell FROM OrderItem JOIN Price ON Price.ID = OrderItem.PriceID JOIN Product ON Price.ProductID = Product.ID Group BY PriceID HAVING sumofsell>0 Order BY sumofsell DESC

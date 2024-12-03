@@ -1,0 +1,6 @@
+SELECT RegionName,ProductName,SUM(ProductCount) as countofsell,COUNT(DISTINCT PersonID) as UniqBuyer,SUM(Price.Money * OrderItem.ProductCount) as Sumofsell
+
+FROM Region JOIN Person ON Person.RegionID = Region.ID JOIN OrderItem ON Person.ID = OrderItem.PersonID JOIN Price ON Price.ID = OrderItem.PriceID JOIN Product ON Product.ID = Price.ProductID
+GROUP BY RegionID
+HAVING UniqBuyer > 1 AND countofsell > 5 AND Sumofsell > 2
+ORDER BY countofsell DESC, RegionName ASC limit 10

@@ -1,0 +1,3 @@
+SELECT *
+
+FROM Region JOIN Person ON Person.RegionID = Region.ID JOIN OrderItem ON Person.ID = OrderItem.PersonID JOIN Price ON Price.ID = OrderItem.PriceID JOIN Product ON Product.ID = Price.ProductID
